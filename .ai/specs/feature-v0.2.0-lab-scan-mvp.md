@@ -111,7 +111,7 @@ upload(scan, patient_id) → extraction (vision-LLM через OpenRouter, JSON-
 
 **Проверка:** smoke-запуск + ruff.
 
-### ⬜ Этап 2: Справочник показателей (lab_catalog)
+### ✅ Этап 2: Справочник показателей (lab_catalog)
 
 **Файлы:**
 - `data/lab_catalog.json`

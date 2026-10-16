@@ -1,0 +1,832 @@
+{
+  "tests": [
+    {
+      "code": "HGB",
+      "name_ru": "Гемоглобин",
+      "group": "cbc",
+      "synonyms": [
+        "Hb",
+        "Hgb",
+        "Haemoglobin",
+        "Hemoglobin",
+        "Гемоглобин (HGB)"
+      ],
+      "unit": "г/л",
+      "unit_aliases": {
+        "g/l": 1,
+        "г/дл": 10,
+        "g/dl": 10
+      },
+      "ref_male": {
+        "low": 130,
+        "high": 170
+      },
+      "ref_female": {
+        "low": 120,
+        "high": 150
+      }
+    },
+    {
+      "code": "RBC",
+      "name_ru": "Эритроциты",
+      "group": "cbc",
+      "synonyms": [
+        "Эритроциты (RBC)",
+        "Red blood cells",
+        "Эр"
+      ],
+      "unit": "10^12/л",
+      "unit_aliases": {
+        "×10^12/л": 1,
+        "10^12/l": 1,
+        "10*12/л": 1,
+        "млн/мкл": 1,
+        "10^6/мкл": 1,
+        "10^6/µl": 1
+      },
+      "ref_male": {
+        "low": 4.3,
+        "high": 5.7
+      },
+      "ref_female": {
+        "low": 3.8,
+        "high": 5.1
+      }
+    },
+    {
+      "code": "WBC",
+      "name_ru": "Лейкоциты",
+      "group": "cbc",
+      "synonyms": [
+        "Лейкоциты (WBC)",
+        "White blood cells",
+        "Лейк"
+      ],
+      "unit": "10^9/л",
+      "unit_aliases": {
+        "×10^9/л": 1,
+        "10^9/l": 1,
+        "10*9/л": 1,
+        "тыс/мкл": 1,
+        "10^3/мкл": 1,
+        "10^3/µl": 1
+      },
+      "ref": {
+        "low": 4.0,
+        "high": 9.0
+      }
+    },
+    {
+      "code": "PLT",
+      "name_ru": "Тромбоциты",
+      "group": "cbc",
+      "synonyms": [
+        "Тромбоциты (PLT)",
+        "Platelets",
+        "Тр"
+      ],
+      "unit": "10^9/л",
+      "unit_aliases": {
+        "×10^9/л": 1,
+        "10^9/l": 1,
+        "10*9/л": 1,
+        "тыс/мкл": 1,
+        "10^3/мкл": 1,
+        "10^3/µl": 1
+      },
+      "ref": {
+        "low": 150,
+        "high": 400
+      }
+    },
+    {
+      "code": "HCT",
+      "name_ru": "Гематокрит",
+      "group": "cbc",
+      "synonyms": [
+        "Ht",
+        "Hct",
+        "Hematocrit"
+      ],
+      "unit": "%",
+      "unit_aliases": {
+        "л/л": 100,
+        "l/l": 100
+      },
+      "ref_male": {
+        "low": 40,
+        "high": 50
+      },
+      "ref_female": {
+        "low": 35,
+        "high": 45
+      }
+    },
+    {
+      "code": "MCV",
+      "name_ru": "Средний объём эритроцита",
+      "group": "cbc",
+      "synonyms": [
+        "Средний объем эритроцитов",
+        "Mean corpuscular volume"
+      ],
+      "unit": "фл",
+      "unit_aliases": {
+        "fl": 1,
+        "мкм3": 1,
+        "µm3": 1
+      },
+      "ref": {
+        "low": 80,
+        "high": 100
+      }
+    },
+    {
+      "code": "MCH",
+      "name_ru": "Среднее содержание гемоглобина в эритроците",
+      "group": "cbc",
+      "synonyms": [
+        "Mean corpuscular hemoglobin",
+        "Среднее содержание Hb в эритроците"
+      ],
+      "unit": "пг",
+      "unit_aliases": {
+        "pg": 1
+      },
+      "ref": {
+        "low": 27,
+        "high": 34
+      }
+    },
+    {
+      "code": "MCHC",
+      "name_ru": "Средняя концентрация гемоглобина в эритроците",
+      "group": "cbc",
+      "synonyms": [
+        "Mean corpuscular hemoglobin concentration",
+        "Средняя концентрация Hb в эритроците"
+      ],
+      "unit": "г/л",
+      "unit_aliases": {
+        "g/l": 1,
+        "г/дл": 10,
+        "g/dl": 10
+      },
+      "ref": {
+        "low": 320,
+        "high": 360
+      }
+    },
+    {
+      "code": "RDW",
+      "name_ru": "Ширина распределения эритроцитов",
+      "group": "cbc",
+      "synonyms": [
+        "RDW-CV",
+        "Red cell distribution width"
+      ],
+      "unit": "%",
+      "unit_aliases": {},
+      "ref": {
+        "low": 11.5,
+        "high": 14.5
+      }
+    },
+    {
+      "code": "ESR",
+      "name_ru": "СОЭ",
+      "group": "cbc",
+      "synonyms": [
+        "Скорость оседания эритроцитов",
+        "Erythrocyte sedimentation rate"
+      ],
+      "unit": "мм/ч",
+      "unit_aliases": {
+        "mm/h": 1,
+        "мм/час": 1,
+        "mm/hr": 1
+      },
+      "ref_male": {
+        "low": 2,
+        "high": 15
+      },
+      "ref_female": {
+        "low": 2,
+        "high": 20
+      }
+    },
+    {
+      "code": "NEUT",
+      "name_ru": "Нейтрофилы",
+      "group": "cbc",
+      "synonyms": [
+        "NEUT%",
+        "NE%",
+        "Neutrophils",
+        "Нейтрофилы %"
+      ],
+      "unit": "%",
+      "unit_aliases": {},
+      "ref": {
+        "low": 47,
+        "high": 72
+      }
+    },
+    {
+      "code": "LYMPH",
+      "name_ru": "Лимфоциты",
+      "group": "cbc",
+      "synonyms": [
+        "LYM%",
+        "LYMPH%",
+        "Lymphocytes",
+        "Лимфоциты %"
+      ],
+      "unit": "%",
+      "unit_aliases": {},
+      "ref": {
+        "low": 19,
+        "high": 37
+      }
+    },
+    {
+      "code": "MONO",
+      "name_ru": "Моноциты",
+      "group": "cbc",
+      "synonyms": [
+        "MON%",
+        "MONO%",
+        "Monocytes",
+        "Моноциты %"
+      ],
+      "unit": "%",
+      "unit_aliases": {},
+      "ref": {
+        "low": 3,
+        "high": 11
+      }
+    },
+    {
+      "code": "EOS",
+      "name_ru": "Эозинофилы",
+      "group": "cbc",
+      "synonyms": [
+        "EO%",
+        "EOS%",
+        "Eosinophils",
+        "Эозинофилы %"
+      ],
+      "unit": "%",
+      "unit_aliases": {},
+      "ref": {
+        "low": 0.5,
+        "high": 5
+      }
+    },
+    {
+      "code": "BASO",
+      "name_ru": "Базофилы",
+      "group": "cbc",
+      "synonyms": [
+        "BA%",
+        "BASO%",
+        "Basophils",
+        "Базофилы %"
+      ],
+      "unit": "%",
+      "unit_aliases": {},
+      "ref": {
+        "low": 0,
+        "high": 1
+      }
+    },
+    {
+      "code": "GLU",
+      "name_ru": "Глюкоза",
+      "group": "biochem",
+      "synonyms": [
+        "Glucose",
+        "Глюкоза крови",
+        "Glu"
+      ],
+      "unit": "ммоль/л",
+      "unit_aliases": {
+        "mmol/l": 1,
+        "мг/дл": 0.0555,
+        "mg/dl": 0.0555
+      },
+      "ref": {
+        "low": 3.9,
+        "high": 6.1
+      }
+    },
+    {
+      "code": "CREA",
+      "name_ru": "Креатинин",
+      "group": "biochem",
+      "synonyms": [
+        "Creatinine",
+        "Crea",
+        "Креатинин в сыворотке"
+      ],
+      "unit": "мкмоль/л",
+      "unit_aliases": {
+        "µmol/l": 1,
+        "umol/l": 1,
+        "мг/дл": 88.42,
+        "mg/dl": 88.42
+      },
+      "ref_male": {
+        "low": 62,
+        "high": 106
+      },
+      "ref_female": {
+        "low": 44,
+        "high": 80
+      }
+    },
+    {
+      "code": "UREA",
+      "name_ru": "Мочевина",
+      "group": "biochem",
+      "synonyms": [
+        "Urea",
+        "Мочевина в сыворотке"
+      ],
+      "unit": "ммоль/л",
+      "unit_aliases": {
+        "mmol/l": 1
+      },
+      "ref": {
+        "low": 2.5,
+        "high": 8.3
+      }
+    },
+    {
+      "code": "URIC",
+      "name_ru": "Мочевая кислота",
+      "group": "biochem",
+      "synonyms": [
+        "Uric acid",
+        "UA"
+      ],
+      "unit": "мкмоль/л",
+      "unit_aliases": {
+        "µmol/l": 1,
+        "umol/l": 1,
+        "мг/дл": 59.48,
+        "mg/dl": 59.48
+      },
+      "ref_male": {
+        "low": 202,
+        "high": 416
+      },
+      "ref_female": {
+        "low": 142,
+        "high": 339
+      }
+    },
+    {
+      "code": "ALT",
+      "name_ru": "АЛТ",
+      "group": "biochem",
+      "synonyms": [
+        "АлАТ",
+        "Аланинаминотрансфераза",
+        "ALAT",
+        "GPT"
+      ],
+      "unit": "Ед/л",
+      "unit_aliases": {
+        "U/L": 1,
+        "Ед/л": 1,
+        "ЕД/л": 1,
+        "МЕ/л": 1,
+        "IU/L": 1
+      },
+      "ref_male": {
+        "high": 41
+      },
+      "ref_female": {
+        "high": 33
+      }
+    },
+    {
+      "code": "AST",
+      "name_ru": "АСТ",
+      "group": "biochem",
+      "synonyms": [
+        "АсАТ",
+        "Аспартатаминотрансфераза",
+        "ASAT",
+        "GOT"
+      ],
+      "unit": "Ед/л",
+      "unit_aliases": {
+        "U/L": 1,
+        "Ед/л": 1,
+        "ЕД/л": 1,
+        "МЕ/л": 1,
+        "IU/L": 1
+      },
+      "ref_male": {
+        "high": 40
+      },
+      "ref_female": {
+        "high": 32
+      }
+    },
+    {
+      "code": "TBIL",
+      "name_ru": "Билирубин общий",
+      "group": "biochem",
+      "synonyms": [
+        "Общий билирубин",
+        "T-Bil",
+        "Total bilirubin",
+        "BIL-T"
+      ],
+      "unit": "мкмоль/л",
+      "unit_aliases": {
+        "µmol/l": 1,
+        "umol/l": 1,
+        "мг/дл": 17.1,
+        "mg/dl": 17.1
+      },
+      "ref": {
+        "low": 3.4,
+        "high": 20.5
+      }
+    },
+    {
+      "code": "DBIL",
+      "name_ru": "Билирубин прямой",
+      "group": "biochem",
+      "synonyms": [
+        "Прямой билирубин",
+        "D-Bil",
+        "Direct bilirubin",
+        "Билирубин связанный"
+      ],
+      "unit": "мкмоль/л",
+      "unit_aliases": {
+        "µmol/l": 1,
+        "umol/l": 1,
+        "мг/дл": 17.1,
+        "mg/dl": 17.1
+      },
+      "ref": {
+        "high": 3.4
+      }
+    },
+    {
+      "code": "CHOL",
+      "name_ru": "Холестерин общий",
+      "group": "biochem",
+      "synonyms": [
+        "Холестерин",
+        "Общий холестерин",
+        "Cholesterol",
+        "TC"
+      ],
+      "unit": "ммоль/л",
+      "unit_aliases": {
+        "mmol/l": 1,
+        "мг/дл": 0.02586,
+        "mg/dl": 0.02586
+      },
+      "ref": {
+        "high": 5.2
+      }
+    },
+    {
+      "code": "HDL",
+      "name_ru": "Холестерин ЛПВП",
+      "group": "biochem",
+      "synonyms": [
+        "ЛПВП",
+        "HDL-C",
+        "HDL cholesterol"
+      ],
+      "unit": "ммоль/л",
+      "unit_aliases": {
+        "mmol/l": 1,
+        "мг/дл": 0.02586,
+        "mg/dl": 0.02586
+      },
+      "ref_male": {
+        "low": 1.0
+      },
+      "ref_female": {
+        "low": 1.2
+      }
+    },
+    {
+      "code": "LDL",
+      "name_ru": "Холестерин ЛПНП",
+      "group": "biochem",
+      "synonyms": [
+        "ЛПНП",
+        "LDL-C",
+        "LDL cholesterol"
+      ],
+      "unit": "ммоль/л",
+      "unit_aliases": {
+        "mmol/l": 1,
+        "мг/дл": 0.02586,
+        "mg/dl": 0.02586
+      },
+      "ref": {
+        "high": 3.0
+      }
+    },
+    {
+      "code": "TG",
+      "name_ru": "Триглицериды",
+      "group": "biochem",
+      "synonyms": [
+        "Triglycerides",
+        "TRIG",
+        "ТГ"
+      ],
+      "unit": "ммоль/л",
+      "unit_aliases": {
+        "mmol/l": 1,
+        "мг/дл": 0.01129,
+        "mg/dl": 0.01129
+      },
+      "ref": {
+        "high": 1.7
+      }
+    },
+    {
+      "code": "TP",
+      "name_ru": "Общий белок",
+      "group": "biochem",
+      "synonyms": [
+        "Белок общий",
+        "Total protein",
+        "Prot"
+      ],
+      "unit": "г/л",
+      "unit_aliases": {
+        "g/l": 1,
+        "г/дл": 10,
+        "g/dl": 10
+      },
+      "ref": {
+        "low": 64,
+        "high": 83
+      }
+    },
+    {
+      "code": "ALB",
+      "name_ru": "Альбумин",
+      "group": "biochem",
+      "synonyms": [
+        "Albumin",
+        "Альбумин в сыворотке"
+      ],
+      "unit": "г/л",
+      "unit_aliases": {
+        "g/l": 1,
+        "г/дл": 10,
+        "g/dl": 10
+      },
+      "ref": {
+        "low": 35,
+        "high": 52
+      }
+    },
+    {
+      "code": "CRP",
+      "name_ru": "С-реактивный белок",
+      "group": "biochem",
+      "synonyms": [
+        "СРБ",
+        "C-reactive protein",
+        "hs-CRP"
+      ],
+      "unit": "мг/л",
+      "unit_aliases": {
+        "mg/l": 1,
+        "мг/дл": 10,
+        "mg/dl": 10
+      },
+      "ref": {
+        "high": 5
+      }
+    },
+    {
+      "code": "ALP",
+      "name_ru": "Щелочная фосфатаза",
+      "group": "biochem",
+      "synonyms": [
+        "ЩФ",
+        "Alkaline phosphatase",
+        "ALKP"
+      ],
+      "unit": "Ед/л",
+      "unit_aliases": {
+        "U/L": 1,
+        "Ед/л": 1,
+        "ЕД/л": 1,
+        "МЕ/л": 1,
+        "IU/L": 1
+      },
+      "ref": {
+        "low": 40,
+        "high": 130
+      }
+    },
+    {
+      "code": "GGT",
+      "name_ru": "ГГТ",
+      "group": "biochem",
+      "synonyms": [
+        "ГГТП",
+        "Гамма-глутамилтрансфераза",
+        "Gamma-GT",
+        "GGTP"
+      ],
+      "unit": "Ед/л",
+      "unit_aliases": {
+        "U/L": 1,
+        "Ед/л": 1,
+        "ЕД/л": 1,
+        "МЕ/л": 1,
+        "IU/L": 1
+      },
+      "ref_male": {
+        "high": 55
+      },
+      "ref_female": {
+        "high": 38
+      }
+    },
+    {
+      "code": "K",
+      "name_ru": "Калий",
+      "group": "biochem",
+      "synonyms": [
+        "Potassium",
+        "K+"
+      ],
+      "unit": "ммоль/л",
+      "unit_aliases": {
+        "mmol/l": 1,
+        "мэкв/л": 1,
+        "mEq/L": 1
+      },
+      "ref": {
+        "low": 3.5,
+        "high": 5.1
+      }
+    },
+    {
+      "code": "NA",
+      "name_ru": "Натрий",
+      "group": "biochem",
+      "synonyms": [
+        "Sodium",
+        "Na+"
+      ],
+      "unit": "ммоль/л",
+      "unit_aliases": {
+        "mmol/l": 1,
+        "мэкв/л": 1,
+        "mEq/L": 1
+      },
+      "ref": {
+        "low": 136,
+        "high": 145
+      }
+    },
+    {
+      "code": "CA",
+      "name_ru": "Кальций общий",
+      "group": "biochem",
+      "synonyms": [
+        "Кальций",
+        "Calcium",
+        "Ca"
+      ],
+      "unit": "ммоль/л",
+      "unit_aliases": {
+        "mmol/l": 1,
+        "мг/дл": 0.2495,
+        "mg/dl": 0.2495
+      },
+      "ref": {
+        "low": 2.15,
+        "high": 2.55
+      }
+    },
+    {
+      "code": "MG",
+      "name_ru": "Магний",
+      "group": "biochem",
+      "synonyms": [
+        "Magnesium",
+        "Mg"
+      ],
+      "unit": "ммоль/л",
+      "unit_aliases": {
+        "mmol/l": 1,
+        "мг/дл": 0.4114,
+        "mg/dl": 0.4114
+      },
+      "ref": {
+        "low": 0.66,
+        "high": 1.07
+      }
+    },
+    {
+      "code": "FE",
+      "name_ru": "Железо",
+      "group": "biochem",
+      "synonyms": [
+        "Железо сывороточное",
+        "Iron",
+        "Fe"
+      ],
+      "unit": "мкмоль/л",
+      "unit_aliases": {
+        "µmol/l": 1,
+        "umol/l": 1,
+        "мкг/дл": 0.179,
+        "µg/dl": 0.179,
+        "ug/dl": 0.179
+      },
+      "ref_male": {
+        "low": 11.6,
+        "high": 31.3
+      },
+      "ref_female": {
+        "low": 9.0,
+        "high": 30.4
+      }
+    },
+    {
+      "code": "FERR",
+      "name_ru": "Ферритин",
+      "group": "biochem",
+      "synonyms": [
+        "Ferritin",
+        "FER"
+      ],
+      "unit": "нг/мл",
+      "unit_aliases": {
+        "ng/ml": 1,
+        "мкг/л": 1,
+        "µg/l": 1,
+        "ug/l": 1
+      },
+      "ref_male": {
+        "low": 30,
+        "high": 400
+      },
+      "ref_female": {
+        "low": 13,
+        "high": 150
+      }
+    },
+    {
+      "code": "TSH",
+      "name_ru": "ТТГ",
+      "group": "biochem",
+      "synonyms": [
+        "Тиреотропный гормон",
+        "Thyroid stimulating hormone"
+      ],
+      "unit": "мМЕ/л",
+      "unit_aliases": {
+        "mIU/L": 1,
+        "мкМЕ/мл": 1,
+        "µIU/ml": 1,
+        "uIU/ml": 1,
+        "мЕд/л": 1
+      },
+      "ref": {
+        "low": 0.4,
+        "high": 4.0
+      }
+    },
+    {
+      "code": "HBA1C",
+      "name_ru": "Гликированный гемоглобин",
+      "group": "biochem",
+      "synonyms": [
+        "HbA1c",
+        "Гликозилированный гемоглобин",
+        "A1c"
+      ],
+      "unit": "%",
+      "unit_aliases": {},
+      "ref": {
+        "low": 4.0,
+        "high": 6.0
+      }
+    }
+  ]
+}
