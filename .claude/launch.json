@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "backend",
+      "runtimeExecutable": "uv",
+      "runtimeArgs": [
+        "run",
+        "uvicorn",
+        "test_analysis.main:app",
+        "--port",
+        "8000"
+      ],
+      "port": 8000
+    }
+  ]
+}
