@@ -139,7 +139,7 @@ upload(scan, patient_id) → extraction (vision-LLM через OpenRouter, JSON-
 
 **Проверка:** ручной прогон на синтетических файлах.
 
-### ⬜ Этап 4: Экстракция — схема, OpenRouter и Fake
+### ✅ Этап 4: Экстракция — схема, OpenRouter и Fake
 
 **Файлы:**
 - `src/test_analysis/extraction/schema.py` (`ExtractedItem`, `ExtractionResult`)
