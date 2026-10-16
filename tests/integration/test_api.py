@@ -382,6 +382,8 @@ def test_openrouter_mode_without_credentials_fails_at_startup(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     monkeypatch.setenv("EXTRACTOR", "openrouter")
+    # an empty env var overrides a key from the developer's local .env
+    monkeypatch.setenv("OPENROUTER_API_KEY", "")
     get_settings.cache_clear()
 
     with pytest.raises(ValidationError, match="OPENROUTER_API_KEY"):
