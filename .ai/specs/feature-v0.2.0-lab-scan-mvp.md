@@ -168,7 +168,7 @@ upload(scan, patient_id) → extraction (vision-LLM через OpenRouter, JSON-
 
 **Проверка:** ручной прогон на фикстуре.
 
-### ⬜ Этап 6: Хранилище карты пациента и seed
+### ✅ Этап 6: Хранилище карты пациента и seed
 
 **Файлы:**
 - `src/test_analysis/patient_card/__init__.py`, `db.py` (engine, session, `create_all`), `models.py`, `repository.py`
