@@ -219,7 +219,7 @@ upload(scan, patient_id) → extraction (vision-LLM через OpenRouter, JSON-
 
 **Проверка:** `sha256sum` до/после повторной генерации + upload через curl.
 
-### ⬜ Этап 9: Frontend — каркас, раздача и экран загрузки
+### ✅ Этап 9: Frontend — каркас, раздача и экран загрузки
 
 **Файлы:**
 - `frontend/package.json`, `next.config.mjs` (`output: 'export'`, `images.unoptimized`), `tsconfig.json`
