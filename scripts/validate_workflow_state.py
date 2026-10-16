@@ -449,6 +449,14 @@ def main() -> None:
             state.allowed_current_skill = args.step if state.ok else None
             state.expected_next_skill_after_exit = next_skill_in_pipeline(args.step) if state.ok else None
 
+    elif state.route == "main" and args.step == "deploy-release":
+        # No spec on main after merge; route is main by construction, so only DIRTY_TREE applies
+        if is_dirty_tree(repo):
+            state.add_issue("DIRTY_TREE", "Working tree must be clean for deploy.")
+        if state.ok:
+            state.allowed_current_skill = args.step
+            state.expected_next_skill_after_exit = next_skill_in_pipeline(args.step)
+
     elif state.route in ("spec",) and args.step:
         state.add_issue("MISSING_SPEC", f"No spec found for branch '{state.branch}'.")
         state.allowed_current_skill = None
