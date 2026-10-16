@@ -189,7 +189,7 @@ upload(scan, patient_id) → extraction (vision-LLM через OpenRouter, JSON-
 
 **Проверка:** ручной прогон seed + запросы к SQLite.
 
-### ⬜ Этап 7: HTTP API пайплайна, ревью и карты
+### ✅ Этап 7: HTTP API пайплайна, ревью и карты
 
 **Файлы:**
 - `src/test_analysis/api/uploads.py`, `drafts.py`, `patients.py`, `errors.py`
