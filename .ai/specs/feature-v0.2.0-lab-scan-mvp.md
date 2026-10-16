@@ -126,7 +126,7 @@ upload(scan, patient_id) → extraction (vision-LLM через OpenRouter, JSON-
 
 **Проверка:** ручной вызов функций + `curl /api/catalog`.
 
-### ⬜ Этап 3: Предобработка файла скана
+### ✅ Этап 3: Предобработка файла скана
 
 **Файлы:**
 - `src/test_analysis/extraction/__init__.py`, `preprocess.py`
