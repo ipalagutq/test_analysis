@@ -10,6 +10,7 @@
 | 2026-10-16 | v0.2.0 Этап 1, greenfield | `ruff format .` в корне переформатирует установленные workflow-скрипты (`.claude/`, `scripts/validate_*.py`) — исключать их через `extend-exclude` в `pyproject.toml` до первого запуска. Строку `implement-spec-stage` в `## Workflow выполнения` ставить ✅ только после последнего этапа. |
 | 2026-10-16 | v0.2.0 Этап 2, до шага ③ тестов нет | `uv run pytest` до `write-tests` даёт exit 5 (no tests collected) — это не провал; проверкой этапа служат ручной прогон из «Определения готовности» + `ruff check`/`ruff format --check`, и это явно сообщается пользователю. |
 | 2026-10-16 | v0.2.0 Этап 3, имена исключений | Спец задаёт исключения без суффикса `Error` (`UnsupportedMediaType`, `ExtractionFailed`…), а python-style правило 13 требует `Error`. Приоритет — имена из spec (это контракт для маппинга в API), отклонение пометить комментарием; ruff N818 не включён, `noqa` не нужен. Битые файлы с валидной сигнатурой маппить в `UnsupportedMediaType`, иначе этап API получит 500. |
+| 2026-10-16 | v0.2.0 Этап 4, Fake ищет фикстуру по sha256 исходника | Протокол `extract(pages)` из spec не даёт `FakeExtractor` исходные байты: PNG-страницы после preprocess хэшируются иначе. Решено keyword-only `extract(pages, *, source)` в Protocol и обеих реализациях. Этап 7 обязан передавать сырые байты загрузки. `openai.OpenAI(max_retries=0)`, иначе SDK-ретраи выходят за `LLM_TIMEOUT_S`; `http_client=httpx.Client(transport=MockTransport)` — точка подмены для тестов. |
 
 ## Retrieval Rules
 
