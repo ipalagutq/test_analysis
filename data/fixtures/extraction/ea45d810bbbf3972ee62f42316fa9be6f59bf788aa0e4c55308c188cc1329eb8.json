@@ -1,0 +1,114 @@
+{
+  "items": [
+    {
+      "test_name_raw": "Глюкоза",
+      "value": 104.0,
+      "value_raw": "104",
+      "unit": "мг/дл",
+      "ref_range": "70-99",
+      "flag": "high",
+      "confidence": 0.96,
+      "needs_review": false
+    },
+    {
+      "test_name_raw": "HbA1c",
+      "value": 5.9,
+      "value_raw": "5,9",
+      "unit": "%",
+      "ref_range": "4,0-6,0",
+      "flag": "normal",
+      "confidence": 0.96,
+      "needs_review": false
+    },
+    {
+      "test_name_raw": "Холестерин общий",
+      "value": 5.1,
+      "value_raw": "5,1",
+      "unit": "ммоль/л",
+      "ref_range": "< 5,2",
+      "flag": "normal",
+      "confidence": 0.96,
+      "needs_review": false
+    },
+    {
+      "test_name_raw": "ЛПВП",
+      "value": 1.12,
+      "value_raw": "1,12",
+      "unit": "ммоль/л",
+      "ref_range": "> 1,0",
+      "flag": "normal",
+      "confidence": 0.96,
+      "needs_review": false
+    },
+    {
+      "test_name_raw": "ЛПНП",
+      "value": 3.0,
+      "value_raw": "3,0",
+      "unit": "ммоль/л",
+      "ref_range": "< 3,0",
+      "flag": "normal",
+      "confidence": 0.96,
+      "needs_review": false
+    },
+    {
+      "test_name_raw": "Триглицериды",
+      "value": 1.6,
+      "value_raw": "1,6",
+      "unit": "ммоль/л",
+      "ref_range": "< 1,7",
+      "flag": "normal",
+      "confidence": 0.68,
+      "needs_review": true
+    },
+    {
+      "test_name_raw": "Креатинин",
+      "value": 99.0,
+      "value_raw": "99",
+      "unit": "мкмоль/л",
+      "ref_range": "62-106",
+      "flag": "normal",
+      "confidence": 0.96,
+      "needs_review": false
+    },
+    {
+      "test_name_raw": "Мочевина",
+      "value": 5.6,
+      "value_raw": "5,6",
+      "unit": "ммоль/л",
+      "ref_range": "2,5-8,3",
+      "flag": "normal",
+      "confidence": 0.96,
+      "needs_review": false
+    },
+    {
+      "test_name_raw": "АЛТ",
+      "value": 34.0,
+      "value_raw": "34",
+      "unit": "Ед/л",
+      "ref_range": "< 41",
+      "flag": "normal",
+      "confidence": 0.96,
+      "needs_review": false
+    },
+    {
+      "test_name_raw": "АСТ",
+      "value": 29.0,
+      "value_raw": "29",
+      "unit": "Ед/л",
+      "ref_range": "< 40",
+      "flag": "normal",
+      "confidence": 0.96,
+      "needs_review": false
+    },
+    {
+      "test_name_raw": "Гемоглобин",
+      "value": 14.8,
+      "value_raw": "14,8",
+      "unit": "г/дл",
+      "ref_range": "13,0-17,0",
+      "flag": "normal",
+      "confidence": 0.96,
+      "needs_review": false
+    }
+  ]
+}

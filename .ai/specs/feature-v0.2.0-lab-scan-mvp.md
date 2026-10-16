@@ -203,7 +203,7 @@ upload(scan, patient_id) → extraction (vision-LLM через OpenRouter, JSON-
 
 **Проверка:** ручной curl-сценарий (позже переходит в integration-тест на шаге ③).
 
-### ⬜ Этап 8: Демо-сканы и фикстуры Fake-экстрактора
+### ✅ Этап 8: Демо-сканы и фикстуры Fake-экстрактора
 
 **Файлы:**
 - `scripts/generate_demo_scans.py`
