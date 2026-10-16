@@ -1,0 +1,23 @@
+# Claude Code local config
+.claude/settings.json
+.claude/settings.local.json
+
+# Secrets
+.env
+deploy/deploy.env
+deploy/*.key
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+frontend/.next/
+
+# Local data
+data/*.db
+.DS_Store

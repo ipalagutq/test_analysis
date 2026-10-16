@@ -1,0 +1,11 @@
+{
+  "agent": "data-flow-tracer",
+  "schema_version": "1",
+  "max_chars": 6000,
+  "required_input_fields": ["stage_name", "target_files", "entry_point", "spec_summary"],
+  "required_sections": ["Inputs", "Transformations", "Outputs", "Analogous Flow", "Gaps"],
+  "target_files_required": true,
+  "allowed_unknown_markers": ["NOT_FOUND", "CHAIN_BREAK", "INSUFFICIENT_CONTEXT"],
+  "forbidden_phrases": ["TODO", "TBD", "...", "etc.", "и т.д.", "to be filled"],
+  "no_unstructured_trailing_text": true
+}

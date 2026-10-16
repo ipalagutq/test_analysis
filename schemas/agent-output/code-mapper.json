@@ -1,0 +1,11 @@
+{
+  "agent": "code-mapper",
+  "schema_version": "1",
+  "max_chars": 9000,
+  "required_input_fields": ["stage_name", "target_files", "architecture_layer", "spec_summary"],
+  "required_sections": ["Files", "Imports", "DTOs/Contracts", "Dependencies", "Reference Pattern"],
+  "target_files_required": true,
+  "allowed_unknown_markers": ["NOT_FOUND", "INSUFFICIENT_CONTEXT"],
+  "forbidden_phrases": ["TODO", "TBD", "...", "etc.", "и т.д.", "to be filled"],
+  "no_unstructured_trailing_text": true
+}
