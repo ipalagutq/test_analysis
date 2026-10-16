@@ -8,6 +8,7 @@
 | 2026-05-13 | Existing agent definitions found | Do not duplicate `code-mapper` and `data-flow-tracer` prompts inside `implement-spec-stage`; source of truth is `templates/agents/*.md`, installed to `.claude/agents/*.md`. |
 | 2026-05-13 | Stage execution safety | Implementation should not begin until the sufficiency gate passes or the user receives a clear stop message. |
 | 2026-10-16 | v0.2.0 Этап 1, greenfield | `ruff format .` в корне переформатирует установленные workflow-скрипты (`.claude/`, `scripts/validate_*.py`) — исключать их через `extend-exclude` в `pyproject.toml` до первого запуска. Строку `implement-spec-stage` в `## Workflow выполнения` ставить ✅ только после последнего этапа. |
+| 2026-10-16 | v0.2.0 Этап 2, до шага ③ тестов нет | `uv run pytest` до `write-tests` даёт exit 5 (no tests collected) — это не провал; проверкой этапа служат ручной прогон из «Определения готовности» + `ruff check`/`ruff format --check`, и это явно сообщается пользователю. |
 
 ## Retrieval Rules
 
