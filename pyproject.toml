@@ -1,6 +1,6 @@
 [project]
 name = "test-analysis"
-version = "0.1.0"
+version = "0.2.0"
 description = "Lab Scan Reader: vision-LLM reads lab scans into a patient card with human review."
 readme = "README.md"
 requires-python = ">=3.12,<3.13"

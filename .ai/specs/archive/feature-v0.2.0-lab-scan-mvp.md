@@ -2,7 +2,7 @@
 
 > **Дата создания:** 2026-10-16
 > **Ветка:** `feature/v0.2.0-lab-scan-mvp`
-> **Статус:** В работе
+> **Статус:** Завершено
 > **Standard:** IEEE 29148:2018 (`validate-requirements-ieee29148`) | Score: 94/100
 
 ---
@@ -14,7 +14,7 @@
 | а | Создание ТЗ + Ветка | — | ✅ |
 | б | Реализация | `implement-spec-stage` | ✅ |
 | в | Написание тестов | `write-tests` | ✅ |
-| г | Мерж | `integrate-release` | ⬜ |
+| г | Мерж | `integrate-release` | ✅ |
 | д | Деплой | `deploy-release` | ⬜ |
 
 ## Видение
