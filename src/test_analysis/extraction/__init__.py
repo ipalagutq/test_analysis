@@ -3,6 +3,7 @@
 from test_analysis.extraction.base import ExtractionFailed, ExtractionInvalidResponse, Extractor
 from test_analysis.extraction.factory import get_extractor
 from test_analysis.extraction.fake import FakeExtractor
+from test_analysis.extraction.normalize import DraftRow, normalize
 from test_analysis.extraction.openrouter import OpenRouterExtractor
 from test_analysis.extraction.preprocess import (
     FileTooLarge,
@@ -15,6 +16,7 @@ from test_analysis.extraction.preprocess import (
 from test_analysis.extraction.schema import ExtractedItem, ExtractionResult
 
 __all__ = [
+    "DraftRow",
     "ExtractedItem",
     "ExtractionFailed",
     "ExtractionInvalidResponse",
@@ -28,5 +30,6 @@ __all__ = [
     "UnsupportedMediaType",
     "detect_mime",
     "get_extractor",
+    "normalize",
     "preprocess",
 ]

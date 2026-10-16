@@ -155,7 +155,7 @@ upload(scan, patient_id) → extraction (vision-LLM через OpenRouter, JSON-
 
 **Проверка:** ручной прогон с mock-транспортом. Опционально — реальный вызов при наличии ключа.
 
-### ⬜ Этап 5: Нормализация в строки черновика
+### ✅ Этап 5: Нормализация в строки черновика
 
 **Файлы:**
 - `src/test_analysis/extraction/normalize.py` (`normalize(result, sex) -> list[DraftRow]`)
