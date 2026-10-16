@@ -1,0 +1,9 @@
+{
+  "items": [
+    {"test_name_raw": "Гемоглобин", "value": 128.0, "value_raw": "128", "unit": "г/л", "ref_range": "120-140", "flag": "normal", "confidence": 0.97, "needs_review": false},
+    {"test_name_raw": "Лейкоциты", "value": 6.4, "value_raw": "6,4", "unit": "10^9/л", "ref_range": "4.0-9.0", "flag": "normal", "confidence": 0.95, "needs_review": false},
+    {"test_name_raw": "Глюкоза", "value": 104.0, "value_raw": "104", "unit": "мг/дл", "ref_range": "70-99", "flag": "high", "confidence": 0.9, "needs_review": false},
+    {"test_name_raw": "Тромбоциты", "value": 245.0, "value_raw": "245", "unit": "10^9/л", "ref_range": "150-400", "flag": "normal", "confidence": 0.5, "needs_review": true},
+    {"test_name_raw": "Показатель Х", "value": 3.2, "value_raw": "3.2", "unit": "ед.", "ref_range": null, "flag": null, "confidence": 0.85, "needs_review": false}
+  ]
+}

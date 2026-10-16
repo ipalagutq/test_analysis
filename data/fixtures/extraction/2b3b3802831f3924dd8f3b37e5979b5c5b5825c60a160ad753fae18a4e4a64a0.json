@@ -1,0 +1,104 @@
+{
+  "items": [
+    {
+      "test_name_raw": "Hb",
+      "value": 127.0,
+      "value_raw": "127",
+      "unit": "г/л",
+      "ref_range": "120-150",
+      "flag": "normal",
+      "confidence": 0.96,
+      "needs_review": false
+    },
+    {
+      "test_name_raw": "Лейкоциты",
+      "value": 6.8,
+      "value_raw": "6,8",
+      "unit": "10^9/л",
+      "ref_range": "4,0-9,0",
+      "flag": "normal",
+      "confidence": 0.96,
+      "needs_review": false
+    },
+    {
+      "test_name_raw": "Тромбоциты",
+      "value": 254.0,
+      "value_raw": "254",
+      "unit": "10^9/л",
+      "ref_range": "150-400",
+      "flag": "normal",
+      "confidence": 0.96,
+      "needs_review": false
+    },
+    {
+      "test_name_raw": "Нейтрофилы %",
+      "value": 60.0,
+      "value_raw": "60",
+      "unit": "%",
+      "ref_range": "47-72",
+      "flag": "normal",
+      "confidence": 0.96,
+      "needs_review": false
+    },
+    {
+      "test_name_raw": "СОЭ",
+      "value": 11.0,
+      "value_raw": "11",
+      "unit": "мм/ч",
+      "ref_range": "2-20",
+      "flag": "normal",
+      "confidence": 0.96,
+      "needs_review": false
+    },
+    {
+      "test_name_raw": "СРБ",
+      "value": 2.4,
+      "value_raw": "2,4",
+      "unit": "мг/л",
+      "ref_range": "< 5",
+      "flag": "normal",
+      "confidence": 0.96,
+      "needs_review": false
+    },
+    {
+      "test_name_raw": "ГЛЮ",
+      "value": 5.2,
+      "value_raw": "5,2",
+      "unit": "ммоль/л",
+      "ref_range": "3,9-6,1",
+      "flag": "normal",
+      "confidence": 0.96,
+      "needs_review": false
+    },
+    {
+      "test_name_raw": "Креатинин",
+      "value": 70.0,
+      "value_raw": "70",
+      "unit": "мкмоль/л",
+      "ref_range": "44-80",
+      "flag": "normal",
+      "confidence": 0.96,
+      "needs_review": false
+    },
+    {
+      "test_name_raw": "АЛТ",
+      "value": 21.0,
+      "value_raw": "21",
+      "unit": "Ед/л",
+      "ref_range": "< 33",
+      "flag": "normal",
+      "confidence": 0.96,
+      "needs_review": false
+    },
+    {
+      "test_name_raw": "ТТГ",
+      "value": 2.8,
+      "value_raw": "2,8",
+      "unit": "мМЕ/л",
+      "ref_range": "0,4-4,0",
+      "flag": "normal",
+      "confidence": 0.74,
+      "needs_review": true
+    }
+  ]
+}

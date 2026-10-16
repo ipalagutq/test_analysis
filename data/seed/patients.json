@@ -1,0 +1,56 @@
+{
+  "patients": [
+    {
+      "id": 1,
+      "display_name": "Иванова Анна Сергеевна (демо)",
+      "sex": "F",
+      "birth_year": 1985,
+      "visits": [
+        {
+          "collected_at": "2025-11-12",
+          "results": {"HGB": 104, "RBC": 3.6, "WBC": 6.1, "PLT": 380, "HCT": 32.0, "MCV": 74, "MCH": 24.0, "RDW": 16.8, "FE": 6.2, "FERR": 6, "ESR": 18}
+        },
+        {
+          "collected_at": "2026-03-18",
+          "results": {"HGB": 116, "RBC": 3.9, "WBC": 5.8, "PLT": 340, "HCT": 35.5, "MCV": 79, "MCH": 26.5, "RDW": 15.2, "FE": 10.5, "FERR": 14, "ESR": 14}
+        },
+        {
+          "collected_at": "2026-08-05",
+          "results": {"HGB": 128, "RBC": 4.2, "WBC": 6.4, "PLT": 295, "HCT": 38.6, "MCV": 85, "MCH": 29.0, "RDW": 13.6, "FE": 15.8, "FERR": 32, "ESR": 11}
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "display_name": "Петров Сергей Иванович (демо)",
+      "sex": "M",
+      "birth_year": 1972,
+      "visits": [
+        {
+          "collected_at": "2026-01-20",
+          "results": {"GLU": 7.2, "HBA1C": 6.8, "CHOL": 6.4, "LDL": 4.2, "HDL": 0.9, "TG": 2.3, "CREA": 98, "UREA": 6.1, "ALT": 52, "AST": 41, "HGB": 152}
+        },
+        {
+          "collected_at": "2026-06-15",
+          "results": {"GLU": 6.0, "HBA1C": 6.1, "CHOL": 5.3, "LDL": 3.2, "HDL": 1.1, "TG": 1.8, "CREA": 102, "UREA": 5.8, "ALT": 38, "AST": 33, "HGB": 149}
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "display_name": "Сидорова Мария Петровна (демо)",
+      "sex": "F",
+      "birth_year": 1990,
+      "visits": [
+        {
+          "collected_at": "2025-12-03",
+          "results": {"HGB": 132, "WBC": 11.8, "PLT": 260, "NEUT": 78, "ESR": 28, "CRP": 24.0, "GLU": 5.1, "CREA": 68, "ALT": 22, "TSH": 5.6}
+        },
+        {
+          "collected_at": "2026-07-22",
+          "results": {"HGB": 126, "WBC": 7.2, "PLT": 248, "NEUT": 62, "ESR": 12, "CRP": 3.1, "GLU": 5.4, "CREA": 71, "ALT": 25, "TSH": 3.2}
+        }
+      ]
+    }
+  ]
+}

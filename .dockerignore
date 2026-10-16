@@ -1,0 +1,26 @@
+.git
+.env
+.venv
+__pycache__
+*.py[cod]
+.pytest_cache
+.ruff_cache
+.DS_Store
+
+# not needed in the image
+.ai
+.claude
+deploy
+tests
+scripts
+templates
+schemas
+
+# runtime state lives in the ./data volume
+data/*.db
+data/uploads
+
+# frontend is built inside the image
+frontend/node_modules
+frontend/.next
+frontend/out

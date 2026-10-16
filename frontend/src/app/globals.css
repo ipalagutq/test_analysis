@@ -1,0 +1,296 @@
+:root {
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --text: #1c2330;
+  --muted: #5c6675;
+  --border: #d8dde4;
+  --accent: #2563eb;
+  --accent-text: #ffffff;
+  --warn-bg: #fff4d6;
+  --warn-border: #e8c15a;
+  --error-bg: #fde8e8;
+  --error-text: #9b1c1c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.demo-banner {
+  padding: 8px 16px;
+  background: var(--warn-bg);
+  border-bottom: 1px solid var(--warn-border);
+  text-align: center;
+  font-weight: 600;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+h1 {
+  margin: 0 0 24px;
+  font-size: 24px;
+}
+
+.card {
+  margin-bottom: 16px;
+  padding: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.card h2 {
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--muted);
+}
+
+select {
+  min-width: 320px;
+  padding: 6px 8px;
+  font: inherit;
+}
+
+button {
+  padding: 8px 16px;
+  font: inherit;
+  color: var(--accent-text);
+  background: var(--accent);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.drop-zone {
+  padding: 32px 16px;
+  text-align: center;
+  border: 2px dashed var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.drop-zone.active {
+  border-color: var(--accent);
+  background: #eef3ff;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.samples {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.samples li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.samples li:last-child {
+  border-bottom: none;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.error {
+  padding: 10px 12px;
+  color: var(--error-text);
+  background: var(--error-bg);
+  border-radius: 6px;
+}
+
+/* review screen: scan on the left, editable rows on the right */
+main:has(> .review-page) {
+  max-width: 1440px;
+}
+
+.review-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.review-layout > .card:first-child {
+  position: sticky;
+  top: 16px;
+}
+
+.scan-pager {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.scan-page {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--border);
+}
+
+.review-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.review-table th,
+.review-table td {
+  padding: 6px 8px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border);
+}
+
+.review-table th {
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.review-table tr.needs-review td {
+  background: var(--warn-bg);
+}
+
+.review-table tr.invalid td {
+  background: var(--error-bg);
+}
+
+.review-table tr.invalid td:first-child {
+  box-shadow: inset 3px 0 0 var(--error-text);
+}
+
+.review-table tr.excluded td {
+  opacity: 0.55;
+}
+
+.review-hint {
+  font-size: 13px;
+  color: #8a5a00;
+}
+
+.code-select {
+  min-width: 0;
+  width: 100%;
+}
+
+.value-input {
+  width: 80px;
+  padding: 4px 6px;
+  font: inherit;
+}
+
+.flag {
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.flag-low {
+  color: #1d4ed8;
+}
+
+.flag-high {
+  color: var(--error-text);
+}
+
+.flag-normal {
+  color: #15803d;
+}
+
+.flag-unknown {
+  color: var(--muted);
+}
+
+.review-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+input[type="date"] {
+  padding: 6px 8px;
+  font: inherit;
+}
+
+button.secondary {
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.status-note {
+  padding: 10px 12px;
+  background: var(--warn-bg);
+  border: 1px solid var(--warn-border);
+  border-radius: 6px;
+}
+
+/* patient card: trend chart above the visit timeline */
+.patient-header h1 {
+  margin-bottom: 4px;
+}
+
+.patient-header {
+  margin-bottom: 16px;
+}
+
+.trend-chart {
+  margin: 16px 0 0;
+}
+
+.trend-chart figcaption {
+  margin-bottom: 8px;
+  color: var(--muted);
+}
+
+.timeline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline-visit + .timeline-visit {
+  margin-top: 20px;
+}
+
+.timeline-visit h3 {
+  margin: 0 0 6px;
+  font-size: 15px;
+}
+
+.review-table tr.selected td {
+  background: #eef3ff;
+}

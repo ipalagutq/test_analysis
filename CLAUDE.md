@@ -91,7 +91,7 @@ test_analysis/
 | uv | latest | Пакетный менеджер backend |
 | FastAPI | — | HTTP-сервис: загрузка → LLM → валидация → нормализация → запись |
 | Pydantic | 2.x | JSON-схема ответа LLM и валидация |
-| Claude (vision) | — | Чтение скана целиком, без отдельного OCR |
+| vision-LLM через OpenRouter (`openai` SDK) | — | Чтение скана целиком, без отдельного OCR; модель задаётся `OPENROUTER_MODEL` |
 | SQLite / Postgres | — | Карта пациента (SQLite для демо) |
 | React / Next.js | — | Веб-UI (npm) |
 | pytest, ruff | — | Тесты, форматирование и линтинг |
@@ -102,9 +102,17 @@ test_analysis/
 `.env` файл (не коммитится):
 
 ```env
-ANTHROPIC_API_KEY=
+EXTRACTOR=fake                # fake | openrouter
+OPENROUTER_API_KEY=           # обязателен при EXTRACTOR=openrouter
+OPENROUTER_MODEL=             # обязателен при EXTRACTOR=openrouter (vision + structured outputs)
 DATABASE_URL=sqlite:///data/patient_card.db
+UPLOAD_DIR=data/uploads
+MAX_UPLOAD_MB=10
+MAX_PDF_PAGES=5
+LLM_TIMEOUT_S=120
 ```
+
+Полный пример — `.env.example`. При `EXTRACTOR=openrouter` без ключа или модели сервис не стартует.
 
 ---
 

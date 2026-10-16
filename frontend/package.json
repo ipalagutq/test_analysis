@@ -1,0 +1,24 @@
+{
+  "name": "lab-scan-reader-frontend",
+  "version": "0.2.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^14.2.35",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "recharts": "^2.15.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.43",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^14.2.35",
+    "typescript": "^5.9.3"
+  }
+}
