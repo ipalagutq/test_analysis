@@ -1,0 +1,24 @@
+services:
+  app:
+    build: .
+    image: lab-scan-reader:0.2.0
+    ports:
+      - "8000:8000"
+    # optional: without .env the service starts with EXTRACTOR=fake
+    env_file:
+      - path: .env
+        required: false
+    volumes:
+      # SQLite database and uploads persist here; the repo's catalog, seed, samples and fixtures are read from it too
+      - ./data:/app/data
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/health', timeout=5)"
+      interval: 30s
+      timeout: 10s
+      start_period: 15s
+      retries: 3
+    restart: unless-stopped

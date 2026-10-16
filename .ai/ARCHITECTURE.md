@@ -14,15 +14,42 @@
 
 ```
 src/test_analysis/
-├── extraction/     ← скан целиком в vision-LLM, ответ по жёсткой JSON-схеме
-├── lab_catalog/    ← 30–50 показателей ОАК/биохимии: коды, синонимы, единицы, нормы
-├── patient_card/   ← пациенты, визиты, подтверждённые результаты (SQLite/Postgres)
-└── api/            ← upload, review, confirm, patient timeline/trends
-frontend/
-├── upload          ← drag&drop PDF/JPG/PNG + выбор демо-пациента
-├── review          ← скан слева / редактируемая таблица справа
-└── patient         ← карта пациента, таймлайн, графики трендов
+├── main.py              ← create_app(): роутеры /api, обработчики ошибок, lifespan (create_all + seed), статика frontend/out
+├── config.py            ← Settings (pydantic-settings), проверка EXTRACTOR=openrouter
+├── seed.py              ← идемпотентный seed демо-пациентов из data/seed/patients.json
+├── extraction/
+│   ├── preprocess.py    ← magic bytes, лимиты, растеризация PDF (pypdfium2), уменьшение до 2000 px
+│   ├── schema.py        ← ExtractionResult / ExtractedItem — JSON-схема ответа LLM
+│   ├── prompt.py        ← системный промпт
+│   ├── base.py          ← протокол Extractor, ExtractionFailed / ExtractionInvalidResponse
+│   ├── openrouter.py    ← OpenRouterExtractor (openai SDK + httpx, json_schema strict, 1 повтор)
+│   ├── fake.py          ← FakeExtractor: data/fixtures/extraction/{sha256}.json | default.json
+│   ├── factory.py       ← выбор реализации по EXTRACTOR
+│   └── normalize.py     ← ExtractedItem → DraftRow (код, конверсия, флаг, needs_review)
+├── lab_catalog/
+│   ├── models.py        ← LabTest, референсные интервалы
+│   └── catalog.py       ← match / convert / compute_flag по data/lab_catalog.json
+├── patient_card/
+│   ├── db.py            ← engine, sessions, create_schema
+│   ├── models.py        ← patients, drafts, visits, results
+│   └── repository.py    ← жизненный цикл черновика, confirm, timeline, trend
+└── api/                 ← под /api: health, catalog, patients (+timeline/trends), uploads, drafts, samples; errors.py — маппинг ошибок
+frontend/src/
+├── lib/api.ts           ← единственный типизированный клиент /api
+├── app/layout.tsx       ← демо-баннер на всех страницах
+├── app/page.tsx         ← / — выбор пациента, загрузка, демо-сканы
+├── app/review/page.tsx  ← /review?id= — ScanViewer + ReviewTable, confirm / discard
+├── app/patient/page.tsx ← /patient?id= — шапка, TrendChart (Recharts, ReferenceArea нормы), Timeline
+└── components/          ← ScanViewer, ReviewTable, Timeline, TrendChart
+data/                    ← lab_catalog.json, seed/, samples/, fixtures/ (в git); patient_card.db, uploads/ (runtime)
+scripts/generate_demo_scans.py ← детерминированные демо-сканы и фикстуры Fake
 ```
+
+Все runtime-пути (`data/…`, `frontend/out`) относительны рабочего каталога: процесс запускается из корня репозитория (в контейнере — `WORKDIR /app`).
+
+## Деплой
+
+`Dockerfile` собирается в два этапа: `node:20` выполняет `npm ci && npm run build` → `frontend/out`, затем `python:3.12-slim` + uv ставит зависимости из `uv.lock` (`--no-dev`) и копирует `src`, статические данные и `frontend/out`. `docker-compose.yml` описывает один сервис `app` на порту 8000 с volume `./data:/app/data`, healthcheck `/api/health` и опциональным `.env` (без него работает режим `fake`).
 
 ## Ключевые паттерны
 

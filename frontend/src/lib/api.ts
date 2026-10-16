@@ -83,6 +83,38 @@ export interface VisitCreated {
   visit_id: number;
 }
 
+/** One confirmed result in a visit (patient_card/repository.py `TimelineResult`). */
+export interface TimelineResult {
+  code: string;
+  name_ru: string;
+  value: number;
+  unit: string;
+  flag: Flag;
+}
+
+export interface TimelineVisit {
+  visit_id: number;
+  /** ISO date `YYYY-MM-DD`. */
+  collected_at: string;
+  model: string | null;
+  results: TimelineResult[];
+}
+
+export interface TrendPoint {
+  collected_at: string;
+  value: number;
+  flag: Flag;
+}
+
+/** One test across visits; the reference interval is for the patient's sex. */
+export interface Trend {
+  code: string;
+  unit: string;
+  ref_low: number | null;
+  ref_high: number | null;
+  points: TrendPoint[];
+}
+
 export interface HealthStatus {
   status: "ok";
   version: string;
@@ -190,4 +222,14 @@ export function confirmDraft(draftId: string, body: ConfirmRequest): Promise<Vis
 
 export function discardDraft(draftId: string): Promise<Draft> {
   return postJson<Draft>(`/drafts/${encodeURIComponent(draftId)}/discard`);
+}
+
+/** Visits of a patient, newest first. */
+export function getTimeline(patientId: number): Promise<TimelineVisit[]> {
+  return request<TimelineVisit[]>(`/patients/${patientId}/timeline`);
+}
+
+/** Values of one test across the patient's visits, oldest first. */
+export function getTrend(patientId: number, code: string): Promise<Trend> {
+  return request<Trend>(`/patients/${patientId}/trends?code=${encodeURIComponent(code)}`);
 }

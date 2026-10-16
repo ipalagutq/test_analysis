@@ -14,12 +14,12 @@ dependencies = [
     "pypdfium2",
     "pillow",
     "python-multipart",
+    "httpx",
 ]
 
 [dependency-groups]
 dev = [
     "pytest",
-    "httpx",
     "ruff",
 ]
 

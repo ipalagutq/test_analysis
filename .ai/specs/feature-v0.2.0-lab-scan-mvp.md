@@ -12,7 +12,7 @@
 | Шаг | Действие | Навык | Статус |
 | --- | --------- | ----- | ------ |
 | а | Создание ТЗ + Ветка | — | ✅ |
-| б | Реализация | `implement-spec-stage` | ⬜ |
+| б | Реализация | `implement-spec-stage` | ✅ |
 | в | Написание тестов | `write-tests` | ⬜ |
 | г | Мерж | `integrate-release` | ⬜ |
 | д | Деплой | `deploy-release` | ⬜ |
@@ -249,7 +249,7 @@ upload(scan, patient_id) → extraction (vision-LLM через OpenRouter, JSON-
 
 **Проверка:** manual-сценарий + проверка `timeline` через API.
 
-### ⬜ Этап 11: Frontend — карта пациента, Docker и документация
+### ✅ Этап 11: Frontend — карта пациента, Docker и документация
 
 **Файлы:**
 - `frontend/src/app/patient/page.tsx`, `frontend/src/components/Timeline.tsx`, `TrendChart.tsx`
