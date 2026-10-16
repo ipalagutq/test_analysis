@@ -235,7 +235,7 @@ upload(scan, patient_id) → extraction (vision-LLM через OpenRouter, JSON-
 
 **Проверка:** manual-сценарий в браузере.
 
-### ⬜ Этап 10: Frontend — экран проверки (review)
+### ✅ Этап 10: Frontend — экран проверки (review)
 
 **Файлы:**
 - `frontend/src/app/review/page.tsx`

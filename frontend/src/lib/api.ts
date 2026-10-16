@@ -21,6 +21,68 @@ export interface UploadCreated {
   draft_id: string;
 }
 
+export type Flag = "low" | "normal" | "high" | "unknown";
+
+export type LlmFlag = "low" | "normal" | "high";
+
+export type DraftStatus = "draft" | "confirmed" | "discarded";
+
+export type TestGroup = "cbc" | "biochem";
+
+/** One review row (extraction/normalize.py `DraftRow`). */
+export interface DraftRow {
+  row_id: number;
+  test_name_raw: string;
+  value_raw: string;
+  value: number | null;
+  unit_raw: string | null;
+  code: string | null;
+  canonical_value: number | null;
+  canonical_unit: string | null;
+  flag: Flag;
+  llm_flag: LlmFlag | null;
+  ref_range_raw: string | null;
+  confidence: number;
+  needs_review: boolean;
+  include: boolean;
+}
+
+export interface Draft {
+  id: string;
+  patient_id: number;
+  status: DraftStatus;
+  model: string | null;
+  extractor: string;
+  page_count: number;
+  rows: DraftRow[];
+  created_at: string;
+}
+
+export interface CatalogEntry {
+  code: string;
+  name_ru: string;
+  unit: string;
+  group: TestGroup;
+}
+
+/** The reviewer's decision on one row; only these fields go to confirm. */
+export interface ConfirmRow {
+  row_id: number;
+  code: string | null;
+  canonical_value: number | null;
+  include: boolean;
+}
+
+export interface ConfirmRequest {
+  /** ISO date `YYYY-MM-DD`. */
+  collected_at: string;
+  rows: ConfirmRow[];
+}
+
+export interface VisitCreated {
+  visit_id: number;
+}
+
 export interface HealthStatus {
   status: "ok";
   version: string;
@@ -33,7 +95,7 @@ export class ApiError extends Error {
     readonly status: number,
     readonly code: string,
     readonly detail: string,
-    readonly rowIds: string[] = [],
+    readonly rowIds: number[] = [],
   ) {
     super(`${code}: ${detail}`);
     this.name = "ApiError";
@@ -57,7 +119,7 @@ async function toApiError(response: Response): Promise<ApiError> {
   const code = typeof body.error === "string" ? body.error : `http_${response.status}`;
   const detail =
     typeof body.detail === "string" ? body.detail : response.statusText || "Неизвестная ошибка";
-  const rowIds = Array.isArray(body.row_ids) ? body.row_ids.map(String) : [];
+  const rowIds = Array.isArray(body.row_ids) ? body.row_ids.map(Number) : [];
   return new ApiError(response.status, code, detail, rowIds);
 }
 
@@ -72,6 +134,14 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
     throw await toApiError(response);
   }
   return (await response.json()) as T;
+}
+
+function postJson<T>(path: string, body?: unknown): Promise<T> {
+  return request<T>(path, {
+    method: "POST",
+    headers: body === undefined ? undefined : { "Content-Type": "application/json" },
+    body: body === undefined ? undefined : JSON.stringify(body),
+  });
 }
 
 export function getHealth(): Promise<HealthStatus> {
@@ -98,4 +168,26 @@ export function uploadScan(file: File, patientId: number): Promise<UploadCreated
   form.append("patient_id", String(patientId));
   // no Content-Type header: the browser sets the multipart boundary itself
   return request<UploadCreated>("/uploads", { method: "POST", body: form });
+}
+
+export function listCatalog(): Promise<CatalogEntry[]> {
+  return request<CatalogEntry[]>("/catalog");
+}
+
+export function getDraft(draftId: string): Promise<Draft> {
+  return request<Draft>(`/drafts/${encodeURIComponent(draftId)}`);
+}
+
+/** URL of the PNG of a draft page; pages are numbered from 0. */
+export function draftPageUrl(draftId: string, page: number): string {
+  return `/api/drafts/${encodeURIComponent(draftId)}/pages/${page}`;
+}
+
+/** Write the included rows into a new visit; 422 `ApiError.rowIds` lists the invalid rows. */
+export function confirmDraft(draftId: string, body: ConfirmRequest): Promise<VisitCreated> {
+  return postJson<VisitCreated>(`/drafts/${encodeURIComponent(draftId)}/confirm`, body);
+}
+
+export function discardDraft(draftId: string): Promise<Draft> {
+  return postJson<Draft>(`/drafts/${encodeURIComponent(draftId)}/discard`);
 }
