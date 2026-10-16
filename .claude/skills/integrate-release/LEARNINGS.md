@@ -7,7 +7,7 @@
 | 2026-10-16 | v0.2.0: `pytest` упал только из-за ключа в локальном `.env` | Перед STOP по красным тестам прогнать их в чистом `git worktree` без `.env`; если зелёные — это дефект изоляции теста, чинить с согласия пользователя отдельным `test(...)`-коммитом до CHANGELOG. |
 | 2026-10-16 | v0.2.0: `scripts/validate_source_sync.py` отсутствует в проекте-потребителе workflow | Отсутствие скрипта = WARN (нет product source layer), не FAIL; отметить в отчёте. |
 | 2026-10-16 | v0.2.0: `validate_merge_completion.py` требует аргументы | Запуск: `validate_merge_completion.py --route {spec\|small_fix} {source_branch}`. |
-| 2026-10-16 | v0.2.0: после merge `validate_workflow_state.py --step deploy-release` на `main` печатает `allowed=NO` при exit 0 | Ориентироваться на exit code; вывод — дефект валидатора (step-проверки выполняются только при наличии spec). |
+| 2026-10-16 | v0.2.1: `validate_workflow_state.py --step integrate-release` на `fix/*` печатает `allowed=NO` при exit 0 (для `main`/deploy исправлено в 0.2.1) | Ориентироваться на exit code; step-проверки валидатора для route `small_fix` не выполняются. |
 
 ## Retrieval Rules
 
