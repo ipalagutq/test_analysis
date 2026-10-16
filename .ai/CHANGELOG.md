@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## [0.2.1] — 2026-10-16
+
+### Fixed — Workflow validator on main before deploy
+
+`scripts/validate_workflow_state.py --step deploy-release` на `main` без spec теперь печатает `allowed=YES` и `next` на чистом дереве и даёт FAIL с `DIRTY_TREE` при незакоммиченных изменениях — вывод совпадает с exit code.
+
+**Tests:** 215 passed
+
 ## [0.2.0] — 2026-10-16
 
 ### Added — Lab Scan MVP
