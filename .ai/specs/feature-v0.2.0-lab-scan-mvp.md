@@ -92,7 +92,7 @@ upload(scan, patient_id) → extraction (vision-LLM через OpenRouter, JSON-
 
 ## Этапы реализации
 
-### ⬜ Этап 1: Каркас backend и конфигурация
+### ✅ Этап 1: Каркас backend и конфигурация
 
 **Файлы:**
 - `pyproject.toml` (uv, Python 3.12, `version = "0.1.0"` — до мержа, версию поднимет `integrate-release`; зависимости: fastapi, uvicorn[standard], pydantic>=2, pydantic-settings, sqlalchemy>=2, openai, pypdfium2, pillow, python-multipart; dev: pytest, httpx, ruff)

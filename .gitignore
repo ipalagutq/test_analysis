@@ -21,3 +21,8 @@ frontend/.next/
 # Local data
 data/*.db
 .DS_Store
+data/uploads/
+
+# Frontend build
+frontend/out
+frontend/node_modules

@@ -2,11 +2,13 @@
 
 ## Назначение
 
-Прототип: ИИ читает сканы лабораторных анализов и раскладывает показатели в карту пациента. Скан → vision-LLM → строгий JSON → нормализация по справочнику → проверка человеком → запись в карту → таймлайн и тренды.
+Прототип: ИИ читает сканы лабораторных анализов и раскладывает показатели в карту пациента. Скан → vision-LLM (через OpenRouter) → строгий JSON → нормализация по справочнику → проверка человеком → запись в карту → таймлайн и тренды.
 
 ## Точка входа
 
-Планируется: `src/test_analysis/main.py` (FastAPI `app`), фронт — `frontend/` (Next.js). Код появится в первом ТЗ.
+`src/test_analysis/main.py` — FastAPI `app` (`create_app()`), все HTTP-роуты под `/api` (`src/test_analysis/api/`). Конфигурация — `src/test_analysis/config.py` (`Settings` на `pydantic-settings`, чтение из env/`.env`, падение при старте на невалидной комбинации). Ошибки API в формате `{"error": code, "detail": str}`. Фронт — `frontend/` (Next.js, статический export, раздаётся тем же процессом).
+
+Запуск: `uv run uvicorn test_analysis.main:app`.
 
 ## Структура модулей
 
@@ -33,7 +35,7 @@ frontend/
 
 ```
 upload(scan, patient_id)
-  → extraction: LLM vision → raw JSON → schema validation
+  → extraction: vision-LLM via OpenRouter (EXTRACTOR=openrouter|fake) → raw JSON → schema validation
   → lab_catalog: map name → code, convert unit, compute flag
   → review draft (UI: edit / confirm)
   → patient_card: persist confirmed results to visit
